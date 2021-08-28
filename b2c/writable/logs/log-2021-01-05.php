@@ -1,0 +1,47 @@
+<?php defined('SYSTEMPATH') || exit('No direct script access allowed'); ?>
+
+CRITICAL - 2021-01-05 22:22:13 --> Session: Configured save path {0} is not writable by the PHP process.
+#0 /var/www/html/humanlinks/system/Session/Handlers/FileHandler.php(143): CodeIgniter\Session\Exceptions\SessionException::forWriteProtectedSavePath()
+#1 [internal function]: CodeIgniter\Session\Handlers\FileHandler->open()
+#2 /var/www/html/humanlinks/system/Session/Session.php(1001): session_start()
+#3 /var/www/html/humanlinks/system/Session/Session.php(237): CodeIgniter\Session\Session->startSession()
+#4 /var/www/html/humanlinks/system/Config/Services.php(773): CodeIgniter\Session\Session->start()
+#5 /var/www/html/humanlinks/system/Config/BaseService.php(119): CodeIgniter\Config\Services::session()
+#6 /var/www/html/humanlinks/system/Config/Services.php(754): CodeIgniter\Config\BaseService::getSharedInstance()
+#7 /var/www/html/humanlinks/app/Controllers/BaseController.php(39): CodeIgniter\Config\Services::session()
+#8 /var/www/html/humanlinks/app/Controllers/Login.php(8): App\Controllers\BaseController->__construct()
+#9 /var/www/html/humanlinks/system/CodeIgniter.php(819): App\Controllers\Login->__construct()
+#10 /var/www/html/humanlinks/system/CodeIgniter.php(330): CodeIgniter\CodeIgniter->createController()
+#11 /var/www/html/humanlinks/system/CodeIgniter.php(245): CodeIgniter\CodeIgniter->handleRequest()
+#12 /var/www/html/humanlinks/index.php(46): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2021-01-05 22:25:38 --> Session: Configured save path {0} is not writable by the PHP process.
+#0 /var/www/html/humanlinks/system/Session/Handlers/FileHandler.php(143): CodeIgniter\Session\Exceptions\SessionException::forWriteProtectedSavePath()
+#1 [internal function]: CodeIgniter\Session\Handlers\FileHandler->open()
+#2 /var/www/html/humanlinks/system/Session/Session.php(1001): session_start()
+#3 /var/www/html/humanlinks/system/Session/Session.php(237): CodeIgniter\Session\Session->startSession()
+#4 /var/www/html/humanlinks/system/Config/Services.php(773): CodeIgniter\Session\Session->start()
+#5 /var/www/html/humanlinks/system/Config/BaseService.php(119): CodeIgniter\Config\Services::session()
+#6 /var/www/html/humanlinks/system/Config/Services.php(754): CodeIgniter\Config\BaseService::getSharedInstance()
+#7 /var/www/html/humanlinks/app/Controllers/BaseController.php(39): CodeIgniter\Config\Services::session()
+#8 /var/www/html/humanlinks/app/Controllers/Login.php(8): App\Controllers\BaseController->__construct()
+#9 /var/www/html/humanlinks/system/CodeIgniter.php(819): App\Controllers\Login->__construct()
+#10 /var/www/html/humanlinks/system/CodeIgniter.php(330): CodeIgniter\CodeIgniter->createController()
+#11 /var/www/html/humanlinks/system/CodeIgniter.php(245): CodeIgniter\CodeIgniter->handleRequest()
+#12 /var/www/html/humanlinks/index.php(46): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2021-01-05 22:27:07 --> Session: Configured save path {0} is not writable by the PHP process.
+#0 /var/www/html/humanlinks/system/Session/Handlers/FileHandler.php(143): CodeIgniter\Session\Exceptions\SessionException::forWriteProtectedSavePath()
+#1 [internal function]: CodeIgniter\Session\Handlers\FileHandler->open()
+#2 /var/www/html/humanlinks/system/Session/Session.php(1001): session_start()
+#3 /var/www/html/humanlinks/system/Session/Session.php(237): CodeIgniter\Session\Session->startSession()
+#4 /var/www/html/humanlinks/system/Config/Services.php(773): CodeIgniter\Session\Session->start()
+#5 /var/www/html/humanlinks/system/Config/BaseService.php(119): CodeIgniter\Config\Services::session()
+#6 /var/www/html/humanlinks/system/Config/Services.php(754): CodeIgniter\Config\BaseService::getSharedInstance()
+#7 /var/www/html/humanlinks/app/Controllers/BaseController.php(39): CodeIgniter\Config\Services::session()
+#8 /var/www/html/humanlinks/app/Controllers/Login.php(8): App\Controllers\BaseController->__construct()
+#9 /var/www/html/humanlinks/system/CodeIgniter.php(819): App\Controllers\Login->__construct()
+#10 /var/www/html/humanlinks/system/CodeIgniter.php(330): CodeIgniter\CodeIgniter->createController()
+#11 /var/www/html/humanlinks/system/CodeIgniter.php(245): CodeIgniter\CodeIgniter->handleRequest()
+#12 /var/www/html/humanlinks/index.php(46): CodeIgniter\CodeIgniter->run()
+#13 {main}
