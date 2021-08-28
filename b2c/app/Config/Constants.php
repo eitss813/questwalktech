@@ -78,3 +78,4 @@ defined('EXIT__AUTO_MAX')      || define('EXIT__AUTO_MAX', 125); // highest auto
 defined('API_URL')             || define('API_URL', 'https://corpsim.in/enterprise/ApiForEnterprise/'); // api to get the data
 defined('ENT_LOGIN_CRED')      || define('ENT_LOGIN_CRED', 'email='.base64_encode("info@humanlinks.in").'&password='.base64_encode("gurHumanlinkslpl")); // api to get the data
 // defined('ENT_LOGIN_CRED')      || define('ENT_LOGIN_CRED', 'email=info@humanlinks.in&password=gurHumanlinkslpl'); // api to get the data
+define('ITEM_PER_PAGE',2);

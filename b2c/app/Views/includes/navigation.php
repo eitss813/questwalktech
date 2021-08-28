@@ -34,24 +34,40 @@
               <p>Catalogue</p>
             </a>
           </li>
-          <li class="nav-item">
+          <?php
+         
+          
+          if($_SESSION['loginUserData']->user_Id != 1){?>
+            <li class="nav-item">
             <a href="<?php echo base_url('Cart');?>" class="nav-link <?php echo (uri_string() == 'Cart'?'active':NULL);?>">
               <i class="far fa-circle nav-icon text-warning"></i>
               <p>Cart</p>
             </a>
           </li>
+          <?php } else{?>
+            <li class="nav-item">
+            <a href="javacript:void();" onclick="showLoginModel()" class="nav-link <?php echo (uri_string() == 'Cart'?'active':NULL);?>" on>
+              <i class="far fa-circle nav-icon text-warning"></i>
+              <p>Cart</p>
+            </a>
+          </li>
+            <?php }?>
+         
+         
           <!-- <li class="nav-item">
             <a href="<?php // echo base_url('profile');?>" class="nav-link <?php // echo (uri_string() == 'profile'?'active':NULL);?>">
               <i class="far fa-circle nav-icon text-info"></i>
               <p>Profile</p>
             </a>
           </li> -->
+          <?php  if($_SESSION['loginUserData']->user_Id != 1){?>
           <li class="nav-item">
             <a href="<?php echo base_url('Simulation');?>" class="nav-link <?php echo (uri_string() == 'Simulation'?'active':NULL);?>">
               <i class="far fa-circle nav-icon text-success"></i>
               <p>My Items</p>
             </a>
           </li>
+          <?php } ?>
           <!-- <li class="nav-header">MULTI LEVEL EXAMPLE</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -124,3 +140,14 @@
     </div>
     <!-- /.sidebar -->
   </aside>
+
+  <script>
+    function showLoginModel(){
+      Swal.fire({
+      icon: 'warning',
+      html: '<h3 style="text-align:center">Please Login!</h3>',
+      showConfirmButton: false,
+      footer: '<a href="<?php base_url()?>login">Click here to login</a>'
+})
+}
+  </script>

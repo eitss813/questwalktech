@@ -38,6 +38,31 @@
     {
       width: auto;
     }
+.navbar-nav.ml-auto .nav-item span{
+  color: white;
+    padding: 8px 15px;
+    display: inline-block;
+    background: #007bff;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.navbar-nav.ml-auto .nav-item .nav-link{
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  padding:0px !important;
+}
+
+.navbar-nav.ml-auto .nav-item .btn{
+background: none;
+border: none;
+}
+.navbar-nav.ml-auto .nav-item span i{
+  font-size: 13px;
+}
+.swal2-footer a{
+  font-size: 15px;
+}
   </style>
 </head>
 <!--
@@ -82,7 +107,7 @@ to get the desired effect
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
     <!-- start of 3 buttons -->
-    <li class="nav-item">
+    <!-- <li class="nav-item">
         <?php if( isset($_SESSION['loginUserData']) && !empty($_SESSION['loginUserData']) ): ?>
         <?php $redirectURL = "https://simulessons.com/trgroi2/auto-login?user_Email=" . $_SESSION['loginUserData']->user_Email . '&user_Password=' . $_SESSION['loginUserData']->user_Password ?>
             <a class="nav-link" title="Home" href="<?php echo $redirectURL ?>">
@@ -97,18 +122,47 @@ to get the desired effect
               </button>
             </a>
         <?php endif; ?>
-      </li>
-
+      </li> -->
+      <?php  if($_SESSION['loginUserData']->user_Id != 1){?>
       <li class="nav-item">
         <a class="nav-link" title="Cart" href="<?php echo base_url('Cart'); ?>">
           <button type="button" class="btn btn-primary btn-flat">
-            <i class="fa fa-shopping-cart"></i>
-            <span class="badge badge-warning navbar-badge" id="gameCountInCart">0</span>
+           
+            <span class="badge badge-warning navbar-badge" > <i class="fa fa-shopping-cart"></i> <strong id="gameCountInCart" class="">0</strong></span>
           </button>
         </a>
       </li>
+      <?php }?>
+      <?php  if($_SESSION['loginUserData']->user_Id == 1){?>
+      <li class="nav-item">
+        <a class="nav-link" title="Cart" href="https://simulessons.com/trgroi2/user/register/">
+          <button type="button" class="btn btn-primary btn-flat">
+        
+            <span class="badge badge-warning navbar-badge" id="register"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;Sign Up</span>
+          </button>
+        </a>
+      </li>
+      <?php }?>
+      <?php  if($_SESSION['loginUserData']->user_Id != 1){?>
+      <li class="nav-item">
+        <a class="nav-link" title="Cart" href="<?php echo base_url('logout'); ?>">
+          <button type="button" class="btn btn-primary btn-flat">
+            <span class="badge badge-warning navbar-badge" id="logout">Logout</span>
+          </button>
+        </a>
+      </li>
+      <?php } else { ?>
+        <li class="nav-item">
+        <a class="nav-link" title="Login" href="<?php echo base_url('login'); ?>">
+          <button type="button" class="btn btn-primary btn-flat">
+            
+            <span class="badge badge-warning navbar-badge" id="logout"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</span>
+          </button>
+        </a>
+      </li>
+      <?php } ?>
 
-      <li class="nav-item dropdown">
+      <!-- <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" title="Action" href="#">
           <button type="button" class="btn btn-primary btn-flat">
             <i class="fas fa-th-large"></i>
@@ -132,7 +186,7 @@ to get the desired effect
           </a>
         </div>
         <!-- end of dropdown here -->
-      </li>
+      <!-- </li> --> 
       <!-- end of 3 buttons -->
       
     </ul>

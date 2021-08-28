@@ -6,15 +6,26 @@ class Login extends BaseController
 	{
 		parent::__construct();
     // echo "<pre>"; print_r($this->session); die(' here ');
-		if($this->session->get('loginUserData') != NULL){
-      header('Location: '.base_url().'Catalogue');
-      exit();
-    }
+	
 	}
 
 	public function index($autoLogin=NULL)
 	{
+		
 		$contant['autoLogin'] =  '';
+
+		
+		
+		if($this->session->get('loginUserData') == NULL){
+			$this->CommonModel = new \App\Models\CommonModel();
+			$dbResult = $this->CommonModel->verifyLogin('deepak@questwalktech.com', 'deepak@questwalktech.com', '123456');
+
+			$this->session->set('loginUserData',$dbResult['userData'][0]);
+		}
+		if($this->session->get('loginUserData') != NULL){
+      header('Location: '.base_url().'Catalogue');
+      exit();
+    }
 		
 		if(!empty($autoLogin))
 		{
@@ -33,6 +44,11 @@ class Login extends BaseController
 		$contant['subview'] =  'register';
 		return view('page_layout',$contant);
   }
+
+	function login(){
+		$contant['subview'] =  'login';
+		return view('page_layout',$contant);
+	}
   
   public function forget_password()
 	{

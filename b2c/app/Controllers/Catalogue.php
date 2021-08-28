@@ -10,11 +10,13 @@ class Catalogue extends BaseController
 	{
 		parent::__construct();
     $this->CommonModel = new \App\Models\CommonModel();
+   
     // echo "<pre>"; print_r($this->session->get('loginUserData')); die(' here ');
 		if($this->session->get('loginUserData') == NULL){
       header('Location: '.base_url());
       exit();
     }
+  
     $this->userId = $this->session->get('loginUserData')->user_Id;
 	}
 
@@ -37,12 +39,13 @@ class Catalogue extends BaseController
             $catalogLinkArray[$catalogSQL->game_id] = $catalogSQL->link;
         }
     }
+
     $contant['catalog_links_array'] = @json_encode($catalogLinkArray);
     $contant['catalog_links_redirection_link'] = !empty($parent_redirect_url)? $parent_redirect_url: '';
     
     $contant['subview'] =  'catalogue';
     $contant['userGamesInCart'] =  $dbResult;
-    
+    $contant['current_user_id'] = $this->userId;
     $contant['enable_link_btns'] = isset($user_email) && ($user_email == 'contacterdeepaksharma@gmail.com') ? true : false;
 		return view('main_layout',$contant);
   }
